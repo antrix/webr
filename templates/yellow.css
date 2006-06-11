@@ -7,6 +7,8 @@ body
     line-height:1.2em;
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
     text-align: left;
     background: #fff;
@@ -17,20 +19,15 @@ p {
     font-size: 12px;
 }
 
-img 
-{
-    border-top: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #c0c0c0;
-    border-right: 1px solid #c0c0c0;
-    padding: 4px;
-    margin: 2px;
-}
 
 a {
     text-decoration: none;
 /*     font-weight: bold; */
     color: #555;
+}
+
+h2 {
+    margin-left: 0.5em;
 }
 
 ul {
@@ -68,6 +65,13 @@ ul li:before {
    padding-right: 2px;
 }
 
+
+#page {
+    width: 95%;
+    margin: 0 auto;
+    background: #fff;
+}
+
 .alignleft {
     float: left;
 }
@@ -76,36 +80,41 @@ ul li:before {
     float: right;
 }
 
-.thumbnail {
+#main {
+/*     width: 95%; */
+    margin: auto;
+}
+
+.thumbs {
    font-size: 11px;
    text-align: center;
    text-decoration: none;
+   float: left;
+   margin: 4px;
+   padding: 4px;
+   /*width: 140px;
+   height: 160px;*/
 }
 
-table.thumbnail {
-    border: 0;
-}
-
-td.thumbnail {
-    padding: 5px;
-}
-
-a.thumbnail {
+.thumbs a {
     font-weight: bold;
 }
 
-a:hover.thumbnail {
+.thumbs a:hover {
     text-decoration: underline;
 }
  
-#page {
-    width: 90%;
-    margin: 0 auto;
-    text-align: left;
-    background: #fff;
+img.thumbnail {
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    padding: 4px;
+    margin: 4px;
 }
 
 #footer {
+    clear: both;
     padding-left: 5px;
     padding-right: 5px;
     width: 100%;
@@ -117,12 +126,12 @@ a:hover.thumbnail {
     text-align: center;
     font-size: 11px;
     margin-bottom: 0;
-    margin-top: 20px;
+/*     margin-top: 20px; */
     background: #ff6;
 }
 
 #footer p {
-    margin: 0;
+    margin: auto;
     padding: 3px;
     text-align: center;
     color: #333;

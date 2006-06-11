@@ -18,34 +18,28 @@
     </div>
 </div>
 
-<table border=0>
-<tr valign="top"><td width="40%">
-    <a href="${G.root}$primary._id/in/set-$photoset._id/">
-        <img src="$primary._img_urls['Small']" alt="$primary._title" title="$primary._title" />
-    </a>
-    <h2>$photoset._title</h2>
-    <p>$photoset._desc.replace('\n','<br/>')</p>
-</td>
-
-<td>
-    <table class="thumbnail">
-    <tr valign="top">
-    #set $count = 0
+<div id="main">
+    <div style="float: left; height: 100%; width: 40%;">
+        <div class="thumb">
+        <a href="${G.root}$primary._id/in/set-$photoset._id/">
+            <img class="thumbnail" src="$primary._img_urls['Small']" 
+                alt="$primary._title" title="$primary._title" />
+        </a>
+        </div>
+        <h2>$photoset._title</h2>
+        <p>$photoset._desc.replace('\n','<br/>')</p>
+    </div>
+        
     #for p in $photos
-        <td class="thumbnail"><a href="${G.root}$p._id/in/set-$photoset._id/">
-            <img src="$p._img_urls['Thumbnail']" alt="$p._title" title="$p._title"/>
-        </a></td>
-        #set $count = $count + 1
-        #if $count == 3
-            #set $count = 0
-            </tr><tr valign="top">
-        #end if 
+    <div class="thumbs">
+        <a href="${G.root}$p._id/in/set-$photoset._id/">
+            <img class="thumbnail" src="$p._img_urls['Square']" 
+                alt="$p._title" title="$p._title"/>
+        </a>
+    </div>    
     #end for
-    </tr>
-    </table>
     
-</td></tr></table>
-
+</div>
 
 <div id="footer">
    <p>
