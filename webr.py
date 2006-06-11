@@ -13,16 +13,6 @@
 # Changelog: http://antrix.net/stuff/webr/Changelog
 #
 
-# Make sure webr_update.py is called at least once to create the following
-# dump of Flickr photoset data
-FlickrDBFile = "flickrdb.pickle.dump"
-
-# Set siteroot like for http://mydomain.com/photos/
-#SiteRoot = '/photos/'
-SiteRoot = '/'
-GalleryName = 'Pictures from the Dungeon'
-# No more configuration options!
-
 __author__      = 'Deepak Sarda'
 __version__     = '0.3'
 __copyright__   = '(c) 2006 Deepak Sarda'
@@ -31,15 +21,19 @@ __url__         = 'http://www.antrix.net/stuff/webr/'
 
 import cPickle
 import web
+
+import config
+
 from webr_update import User, Photo, PhotoSet
 
 class Data:
     pass
 # G is the global data struct used everywhere in webr.py!
 G = Data()
-G.user, G.sets_l, G.sets_d, G.photos_d = cPickle.load(open(FlickrDBFile))
-G.root = SiteRoot
-G.name = GalleryName
+G.user, G.sets_l, G.sets_d, G.photos_d = cPickle.load(open(config.FlickrDBFile))
+G.root = config.SiteRoot
+G.media = config.MediaRoot
+G.name = config.GalleryName
 
 #### Helper functions ####
 import mimetypes
@@ -145,9 +139,9 @@ class PhotoC:
 class StaticServerC:
     def GET(self, static_dir):
         try:
-            static_file_name = web.context.path.split('/')[-1]
+            static_file_name = web.ctx.path.split('/')[-1]
             web.header('Content-type', mime_type(static_file_name))
-            static_file = open('.' + web.context.path, 'rb').read()
+            static_file = open('.' + web.ctx.path, 'rb').read()
             web.ctx.output = static_file
         except IOError:
             web.notfound()
@@ -162,7 +156,5 @@ urls = (
     '/?', 'IndexC',
 )
 
-web.internalerror = web.debugerror
-
 if __name__ == '__main__':
-    web.run(urls)
+    web.run(urls, globals(), *config.middleware)
