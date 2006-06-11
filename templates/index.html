@@ -1,0 +1,46 @@
+<html>
+#filter EncodeUnicode
+<head>
+    <title>Photos by $G.user._realname on webr</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="${G.root}templates/style.css" />
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+    <div class="alignleft"><a href="$G.root">$G.name</a></div>
+    <div class="alignright">
+        <a href="$G.user._profile_url">$G.user._realname</a>
+    </div>
+</div>
+
+<table class="thumbnail">
+<tr valign="top">
+#set $count = 0
+#for set, primary in zip($sets, $primaries)
+    <td class="thumbnail"><a href="${G.root}set/$set._id/">
+        <img src="$primary._img_urls['Thumbnail']" alt="$set._title" title="$set._title"/>
+        </a><br/><span class="thumbnail"><a class="thumbnail" href="${G.root}set/$set._id/">$set._title</a>
+        <br/>($set._pcount photos)</span>
+    </td>
+    #set $count = $count + 1
+    #if $count == 5
+        #set $count = 0
+        </tr><tr valign="top">
+    #end if 
+#end for
+</tr>
+</table>
+
+
+<div id="footer">
+   <p>
+   This photo gallery runs on <a href="http://www.antrix.net/stuff/webr">webr</a>
+   </p>
+</div>
+
+</div>
+</body>
+</html>

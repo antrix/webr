@@ -1,0 +1,149 @@
+/* Color scheme inspired by Ask Mefi */
+
+body
+{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height:1.2em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    text-align: left;
+    background-color: #213423;
+    color: #999999;
+    width: 850px;
+}
+
+#page {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+/*     background-color: #426746; */
+}
+
+h2 {
+    color:  #A4C130;
+}
+p {
+    font-size: 12px;
+}
+
+img 
+{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    padding: 4px;
+    margin: 2px;
+}
+
+a {
+    text-decoration: none;
+/*     font-weight: bold; */
+    color: #cc0;
+}
+
+a:hover {
+    color: #ccf;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    font-size: 12px;
+}
+
+
+ul li:before {
+    content: "\00BB \0020";
+}
+
+#header {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    background-color: #426746;
+}
+
+#header a {
+   display : inline;
+/*    color: #000; */
+   font-weight: bold;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.thumbnail {
+   font-size: 11px;
+   text-align: center;
+   text-decoration: none;
+}
+
+table.thumbnail {
+    border: 0;
+}
+
+td.thumbnail {
+    padding: 5px;
+}
+
+a.thumbnail {
+    font-weight: bold;
+}
+
+a:hover.thumbnail {
+/*     text-decoration: underline; */
+}
+ 
+
+#footer {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+/*    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;*/
+    height: 20px;
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    background-color: #426746;
+}
+
+#footer p {
+    margin: 0;
+    padding: 3px;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+}
+#footer a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #cc0;
+}
+#footer a:hover {
+/*     text-decoration: underline; */
+    font-weight: normal;
+    color: #fff;
+}

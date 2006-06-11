@@ -1,0 +1,58 @@
+<html>
+#filter EncodeUnicode
+<head>
+    <title>$photoset._title - a photoset by $G.user._username</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="${G.root}templates/style.css" />
+</head>
+<body>
+
+<div id="page">
+
+<div id="header">
+    <div class="alignleft"><a href="${G.root}">$G.name</a>
+    :: <i>$photoset._title</i>
+    </div>
+    <div class="alignright">
+        <a href="$G.user._profile_url">$G.user._realname</a>
+    </div>
+</div>
+
+<table border=0>
+<tr valign="top"><td width="40%">
+    <a href="${G.root}$primary._id/in/set-$photoset._id/">
+        <img src="$primary._img_urls['Small']" alt="$primary._title" title="$primary._title" />
+    </a>
+    <h2>$photoset._title</h2>
+    <p>$photoset._desc.replace('\n','<br/>')</p>
+</td>
+
+<td>
+    <table class="thumbnail">
+    <tr valign="top">
+    #set $count = 0
+    #for p in $photos
+        <td class="thumbnail"><a href="${G.root}$p._id/in/set-$photoset._id/">
+            <img src="$p._img_urls['Thumbnail']" alt="$p._title" title="$p._title"/>
+        </a></td>
+        #set $count = $count + 1
+        #if $count == 3
+            #set $count = 0
+            </tr><tr valign="top">
+        #end if 
+    #end for
+    </tr>
+    </table>
+    
+</td></tr></table>
+
+
+<div id="footer">
+   <p>
+   This photo gallery runs on <a href="http://www.antrix.net/stuff/webr">webr</a>
+   </p>
+</div>
+
+</div>
+</body>
+</html>
