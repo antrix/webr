@@ -5,7 +5,7 @@ import web
 FlickrDBFile = "flickrdb.pickle.dump"
 SiteRoot = '/'
 MediaRoot = '/templates/'
-GalleryName = 'Pictures from the Dungeon'
+GalleryName = 'My Flickr Photosets'
 
 web.webapi.internalerror = web.debugerror
 middleware = [web.reloader]
