@@ -11,12 +11,9 @@
 #
 # requires: flickrapi (http://beej.us/flickr/flickrapi/)
 #
-# Changelog:
-#
-# 0.1   First release. 
 
 __author__      = 'Deepak Sarda'
-__version__     = '0.1'
+__version__     = '0.3'
 __copyright__   = '(c) 2006 Deepak Sarda'
 __license__     = 'GPL'
 __url__         = 'http://www.antrix.net/stuff/webr/'
