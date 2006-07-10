@@ -24,12 +24,12 @@ __url__         = 'http://www.antrix.net/stuff/webr/'
 import sys, os, cPickle
 import flickrapi
 
-# Change FUser to your Flickr userid.
+# Remember to change FUser to your Flickr userid!
+from config import FUser, FlickrDBFile
+
 # The rest can be left as is.
-FUser = "94046501@N00"
 FKey = "9baf1fe6daf86b0602b1ca31f7a83688"
 FSecret = "2964866d87b3b8c5"
-FlickrDBFile = 'flickrdb.pickle.dump'
 
 fapi = flickrapi.FlickrAPI(FKey, FSecret)
 
